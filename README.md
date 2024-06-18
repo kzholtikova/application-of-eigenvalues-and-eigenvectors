@@ -15,18 +15,18 @@ Then, a linear system with the substituted eigenvalue has to be solved to **find
 **Principal Component Analysis** is a dimensionality reduction technique that transforms data to a new coordinate system where the greatest variances are on the first coordinates (principal components). **Step-by-Step:**
 1. Data Preparation:
 	- Start with a dataset having n observations and p variables.
- 	- Standardize the data if variables are measured on different scales.
+ 	- Standardize the data if variables are measured on different scales shifting to the new origin.
 2. Covariance Matrix Computation:
-	- Calculate the covariance matrix to understand how variables relate to each other.
+	- Calculate the covariance matrix to understand how variables relate to each other by squaring distances from the projected point to the new origin.
 4. Eigenvalues and Eigenvectors:
 	- Compute the eigenvalues and eigenvectors of the covariance matrix.
 	- Eigenvectors determine the directions (principal components), and eigenvalues indicate the magnitude (variance) in these directions.
 5. Forming the Principal Components:
-	- Rank the eigenvalues from largest to smallest and correspondingly sort the eigenvectors.
+	- Rank the eigenvalues from largest to smallest and correspondingly sort the eigenvectors building the best fitting orthogonal line.
 	- Choose the top k eigenvectors to form a new feature space - the principal components.
 6. Transforming the Data:
-	- Multiply the original data by the matrix of top k eigenvectors to transform the data into the new subspace.
-	- The transformed dataset has reduced dimensions but retains most of the variability.
+	- Multiply the original data by the matrix of top k eigenvectors to transform the data into the new subspace from projections onto PC1 and PC2.
+	- The transformed dataset has reduced dimensions but retains most of the variability unless the correlations are far from linear.
 
 PCA have its **drawbacks** though:
 - For the computer, it is the dimensionality of the covariance matrix Q = mn*mn. 
